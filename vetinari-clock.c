@@ -25,7 +25,6 @@
 #pragma config DEBUG = OFF
 #pragma config LVP = ON
 
-
 #define _XTAL_FREQ 32768
 #include <xc.h>
 
