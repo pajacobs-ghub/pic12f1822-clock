@@ -7,7 +7,7 @@
 // PIC12F1822 Configuration Bit Settings (generated in MPLAB-X memory view)
 // CONFIG1
 #pragma config FOSC = LP
-#pragma config WDTE = OFF
+#pragma config WDTE = ON
 #pragma config PWRTE = ON
 #pragma config MCLRE = ON
 #pragma config CP = OFF
@@ -41,7 +41,7 @@ void tmr2_init(void)
 
 static inline void tmr2_wait(void)
 {
-    while (!PIR1bits.TMR2IF) { /* wait */ }
+    while (!PIR1bits.TMR2IF) { CLRWDT(); }
     PIR1bits.TMR2IF = 0;
 }
 
